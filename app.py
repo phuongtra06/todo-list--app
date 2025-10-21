@@ -50,3 +50,19 @@ if __name__ == "__main__":
     complete_task(0)  # Đánh dấu công việc đầu tiên là hoàn thành
 
     list_tasks()
+def delete_task(task_index):
+    """Xóa một công việc khỏi danh sách."""
+    if 0 <= task_index < len(tasks):
+        removed_task = tasks.pop(task_index)
+        print(f"🗑️ Đã xóa công việc: {removed_task['name']}")
+    else:
+        print("❌ Chỉ số công việc không hợp lệ.")
+if __name__ == "__main__":
+    print("Chào mừng đến với ứng dụng To-Do List!")
+
+    add_task("Học bài Git và GitHub")
+    add_task("Làm bài tập thực hành ở nhà")
+    complete_task(0)
+    delete_task(1)
+
+    list_tasks()
